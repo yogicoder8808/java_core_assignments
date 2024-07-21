@@ -1,0 +1,5 @@
+package musicPlayerManagementSystem;
+
+public interface Skippable {
+
+}

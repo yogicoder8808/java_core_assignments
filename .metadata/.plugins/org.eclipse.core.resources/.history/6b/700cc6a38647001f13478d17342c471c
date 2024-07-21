@@ -1,0 +1,8 @@
+package musicPlayerManagementSystem;
+
+//Playable interface
+public interface Playable {
+ void play();
+ void pause();
+ void stop();
+}

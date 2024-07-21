@@ -1,0 +1,53 @@
+package unique_elements;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class UniqueElementsFinder {
+	
+	// Instance variable to hold the array
+    private String[] array;
+
+    // Constructor to initialize the array
+    public UniqueElementsFinder(String[] array) {
+        this.array = array;
+    }
+
+    // Method to find unique elements
+    public List<String> findUniqueElements() {
+        List<String> uniqueList = new ArrayList<>();
+
+        // Iterate through each element in the array
+        for (int i = 0; i < array.length; i++) {
+            boolean isUnique = true;
+            
+            // Check if the element already exists in the uniqueList
+            for (String uniqueElement : uniqueList) {
+                if (array[i].equals(uniqueElement)) {
+                    isUnique = false;
+                    break;
+                }
+            }
+            
+            // If it's unique, add it to the uniqueList
+            if (isUnique) {
+                uniqueList.add(array[i]);
+            }
+        }
+
+        return uniqueList;
+    }
+
+	public static void main(String[] args) {
+		// Define the array of strings
+        String[] inputArray = {"apple", "banana", "apple", "watermelon", "grapes", "grapes"};
+        
+        // Create an instance of UniqueElementsFinder
+        UniqueElementsFinder finder = new UniqueElementsFinder(inputArray);
+        
+        // Find and print unique elements
+        List<String> uniqueElements = finder.findUniqueElements();
+        System.out.println("Unique elements: " + uniqueElements);
+    }
+
+}

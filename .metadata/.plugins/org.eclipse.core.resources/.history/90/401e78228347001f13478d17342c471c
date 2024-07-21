@@ -1,0 +1,24 @@
+package bankingManagementSystem;
+
+public class Transaction {
+    private String type; // e.g., "Deposit", "Withdrawal", "Transfer"
+    private double amount;
+    private Account fromAccount;
+    private Account toAccount;
+
+    // Constructor
+    public Transaction(String type, double amount, Account fromAccount, Account toAccount) {
+        this.type = type;
+        this.amount = amount;
+        this.fromAccount = fromAccount;
+        this.toAccount = toAccount;
+    }
+
+    // Method to log transaction
+    public void logTransaction() {
+        System.out.println("Transaction Type: " + type + ", Amount: " + amount +
+                (fromAccount != null ? ", From Account: " + fromAccount.getAccountNumber() : "") +
+                (toAccount != null ? ", To Account: " + toAccount.getAccountNumber() : ""));
+    }
+}
+

@@ -1,0 +1,39 @@
+package bankingManagementSystem;
+
+public class BankingSystem {
+
+    public static void main(String[] args) {
+        // Create a bank
+        Bank bank = new Bank(10); // Bank can handle up to 10 accounts
+
+        // Create customers
+        Customer customer1 = new Customer("John Doe", "C001");
+        Customer customer2 = new Customer("Jane Smith", "C002");
+
+        // Open accounts
+        Account account1 = bank.openAccount("A001", customer1);
+        Account account2 = bank.openAccount("A002", customer2);
+
+        // Perform transactions
+        if (account1 != null && account2 != null) {
+            account1.deposit(500);
+            account1.withdraw(200);
+            account1.transfer(account2, 100);
+
+//            // Log transactions
+//            Transaction depositTransaction = new Transaction("Deposit", 500, null, account1);
+//            depositTransaction.logTransaction();
+//
+//            Transaction withdrawTransaction = new Transaction("Withdrawal", 200, account1, null);
+//            withdrawTransaction.logTransaction();
+//
+//            Transaction transferTransaction = new Transaction("Transfer", 100, account1, account2);
+//            transferTransaction.logTransaction();
+
+            // View account details
+            account1.viewDetails();
+            account2.viewDetails();
+        }
+    }
+}
+

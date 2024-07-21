@@ -1,0 +1,20 @@
+package musicPlayerManagementSystem;
+
+//Playable interface
+public interface Playable {
+ void play();
+ void pause();
+ void stop();
+}
+
+//Skippable interface
+public interface Skippable {
+ void skipForward();
+ void skipBackward();
+}
+
+//Shuffleable interface
+public interface Shuffleable {
+ void shuffle();
+}
+
