@@ -16,7 +16,6 @@ public class Member {
         this.borrowedBooks = new ArrayList<>();
     }
 
-    // Getters and Setters
     public String getName() {
         return name;
     }
@@ -29,7 +28,6 @@ public class Member {
         return borrowedBooks;
     }
 
-    // Borrow a book
     public void borrowBook(Book book) {
         if (book.isAvailable()) {
             book.setAvailable(false);
@@ -40,7 +38,6 @@ public class Member {
         }
     }
 
-    // Return a book
     public void returnBook(Book book) {
         if (borrowedBooks.remove(book)) {
             book.setAvailable(true);

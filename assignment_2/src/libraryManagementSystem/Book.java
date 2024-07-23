@@ -15,7 +15,6 @@ public class Book {
         this.isAvailable = true;
     }
 
-    // Getters and Setters
     public String getTitle() {
         return title;
     }

@@ -2,7 +2,6 @@ package bankingManagementSystem;
 
 public class BasicAccount extends Account {
 
-    // Constructor
     public BasicAccount(String accountNumber, Customer customer) {
         super(accountNumber, customer);
     }

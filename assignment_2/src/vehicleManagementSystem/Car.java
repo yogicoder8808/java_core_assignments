@@ -9,7 +9,6 @@ public class Car extends Vehicle{
         this.numberOfDoors = numberOfDoors;
     }
 
-    // Getter and Setter
     public int getNumberOfDoors() {
         return numberOfDoors;
     }
@@ -18,7 +17,6 @@ public class Car extends Vehicle{
         this.numberOfDoors = numberOfDoors;
     }
 
-    // Method specific to Car
     public void openTrunk() {
         System.out.println("The trunk is now open.");
     }

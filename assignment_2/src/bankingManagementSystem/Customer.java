@@ -10,7 +10,6 @@ public class Customer {
         this.id = id;
     }
 
-    // Getters
     public String getName() {
         return name;
     }

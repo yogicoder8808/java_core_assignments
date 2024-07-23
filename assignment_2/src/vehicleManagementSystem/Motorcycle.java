@@ -9,7 +9,6 @@ public class Motorcycle extends Vehicle{
         this.handlebarType = handlebarType;
     }
 
-    // Getter and Setter
     public String getHandlebarType() {
         return handlebarType;
     }
@@ -18,7 +17,6 @@ public class Motorcycle extends Vehicle{
         this.handlebarType = handlebarType;
     }
 
-    // Method specific to Motorcycle
     public void performWheelie() {
         System.out.println("Performing a wheelie!");
     }

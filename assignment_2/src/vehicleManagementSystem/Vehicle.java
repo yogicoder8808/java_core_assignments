@@ -37,17 +37,14 @@ public class Vehicle {
         this.year = year;
     }
 
-    // Method to accelerate
     public void accelerate() {
         System.out.println("The vehicle is accelerating.");
     }
 
-    // Method to brake
     public void brake() {
         System.out.println("The vehicle is braking.");
     }
 
-    // Method to display vehicle information
     public void displayInfo() {
         System.out.println("Make: " + make + ", Model: " + model + ", Year: " + year);
     }

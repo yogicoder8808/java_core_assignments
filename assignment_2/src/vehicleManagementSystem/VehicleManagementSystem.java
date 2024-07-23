@@ -3,7 +3,6 @@ package vehicleManagementSystem;
 public class VehicleManagementSystem {
 
 	public static void main(String[] args) {
-		 // Create instances of each vehicle type
         Car car = new Car("Toyota", "SUV", 2022, 4);
         Truck truck = new Truck("Ford", "F-150", 2021, 2000);
         Motorcycle motorcycle = new Motorcycle("Harley-Davidson", "Street 750", 2023, "Cruiser");

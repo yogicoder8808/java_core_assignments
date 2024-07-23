@@ -13,7 +13,6 @@ public class Staff {
         this.role = role;
     }
 
-    // Getters and Setters
     public String getName() {
         return name;
     }
@@ -26,7 +25,6 @@ public class Staff {
         return role;
     }
 
-    // Add a new member
     public void addMember(Member member) {
         System.out.println(name + " added new member: " + member.getName());
     }

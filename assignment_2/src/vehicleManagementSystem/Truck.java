@@ -9,7 +9,6 @@ public class Truck extends Vehicle{
         this.cargoCapacity = cargoCapacity;
     }
 
-    // Getter and Setter
     public int getCargoCapacity() {
         return cargoCapacity;
     }
@@ -18,7 +17,6 @@ public class Truck extends Vehicle{
         this.cargoCapacity = cargoCapacity;
     }
 
-    // Method specific to Truck
     public void loadCargo(int weight) {
         if (weight <= cargoCapacity) {
             System.out.println("Loading " + weight + " kg of cargo.");
