@@ -1,7 +1,7 @@
 package parallelStreamReservation;
 
 public class FlowerCakeOrder implements Runnable {
-    private String item;
+    private final String item;
 
     public FlowerCakeOrder(String item) {
         this.item = item;
@@ -9,11 +9,15 @@ public class FlowerCakeOrder implements Runnable {
 
     @Override
     public void run() {
+        System.out.println("Placing order for: " + item);
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
+            System.err.println("Order for " + item + " was interrupted.");
+            return;
         }
         System.out.println("Order confirmed for " + item);
     }
 }
+

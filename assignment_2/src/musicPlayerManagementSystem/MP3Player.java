@@ -1,6 +1,6 @@
 package musicPlayerManagementSystem;
 
-public class MP3Player implements Playable, Skippable, Shuffleable{
+public final class MP3Player implements Playable, Skippable, Shuffleable{
 	private String currentTrack;
 
     public MP3Player(String currentTrack) {

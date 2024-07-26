@@ -1,6 +1,6 @@
 package musicPlayerManagementSystem;
 
-public class StreamingPlayer implements Playable, Skippable, Shuffleable {
+public final class StreamingPlayer implements Playable, Skippable, Shuffleable {
     private String currentTrack;
 
     public StreamingPlayer(String currentTrack) {

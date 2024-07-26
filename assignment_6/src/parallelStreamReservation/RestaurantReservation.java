@@ -1,7 +1,7 @@
 package parallelStreamReservation;
 
 public class RestaurantReservation implements Runnable {
-    private String restaurantName;
+    private final String restaurantName;
 
     public RestaurantReservation(String restaurantName) {
         this.restaurantName = restaurantName;
@@ -9,12 +9,15 @@ public class RestaurantReservation implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Reserving a table at " + restaurantName);
+        System.out.println("Reserving a table at: " + restaurantName);
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
+            System.err.println("Reservation at " + restaurantName + " was interrupted.");
+            return;
         }
         System.out.println("Reservation confirmed at " + restaurantName);
     }
 }
+

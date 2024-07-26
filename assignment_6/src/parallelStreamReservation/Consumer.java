@@ -2,20 +2,38 @@ package parallelStreamReservation;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class Consumer {
-    private List<Runnable> orders;
+    private final List<Runnable> orders;
 
     public Consumer(List<Runnable> orders) {
         this.orders = orders;
     }
 
     public void placeOrders() {
-        orders.parallelStream().forEach(Runnable::run);
+        ExecutorService executor = Executors.newFixedThreadPool(orders.size());
+        try {
+            for (Runnable order : orders) {
+                executor.submit(order);
+            }
+            executor.shutdown();
+            if (!executor.awaitTermination(5, TimeUnit.SECONDS)) {
+                executor.shutdownNow();
+                System.err.println("Executor did not terminate");
+            }
+        } catch (InterruptedException e) {
+            executor.shutdownNow();
+            Thread.currentThread().interrupt();
+            System.err.println("Executor was interrupted: " + e.getMessage());
+        } finally {
+            executor.shutdownNow();
+        }
     }
 
     public static void main(String[] args) {
-
         RestaurantReservation restaurantReservation = new RestaurantReservation("The Gourmet Kitchen");
         FlowerCakeOrder flowerCakeOrder = new FlowerCakeOrder("Birthday Cake");
         CabDriverReservation cabDriverReservation = new CabDriverReservation("Devaraj");
@@ -26,3 +44,4 @@ public class Consumer {
         consumer.placeOrders();
     }
 }
+

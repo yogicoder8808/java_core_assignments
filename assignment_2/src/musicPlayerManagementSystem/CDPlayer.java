@@ -1,6 +1,6 @@
 package musicPlayerManagementSystem;
 
-public class CDPlayer implements Playable, Skippable {
+public final class CDPlayer implements Playable, Skippable {
     private String currentTrack;
 
     public CDPlayer(String currentTrack) {

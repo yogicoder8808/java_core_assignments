@@ -1,6 +1,6 @@
 package musicPlayerManagementSystem;
 
-public interface Playable {
+public sealed interface Playable permits CDPlayer, MP3Player, StreamingPlayer{
  void play();
  void pause();
  void stop();
